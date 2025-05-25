@@ -11,15 +11,15 @@ This repository helps you deploy and manage a complete AWS environment using **m
 ## 📁 Project Structure
 
 terraform-infra
-├── modules 
-│ ├── vpc
-│ ├── ec2
-│ └── eks
+├── modules
+│   ├── vpc
+│   ├── ec2
+│   └── eks
 ├── environments
-│ ├── dev
-│ └── prod
-├── Jenkinsfile 
-└── README.md 
+│   ├── dev
+│   └── prod
+├── Jenkinsfile
+└── README.md
 
 
 ## 🛠 Tech Stack
