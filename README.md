@@ -11,7 +11,7 @@ This repository helps you deploy and manage a complete AWS environment using **m
 ## 📁 Project Structure
 
 terraform-infra/
-├── modules/ # Reusable Terraform modules
+├── modules/ 
 │ ├── vpc/
 │ ├── ec2/
 │ └── eks/
