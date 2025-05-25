@@ -9,7 +9,7 @@ This repository helps you deploy and manage a complete AWS environment using **m
 ---
 
 ## 📁 Project Structure
-
+```text
 terraform-infra/
 ├── modules/
 │ ├── vpc/
@@ -20,7 +20,7 @@ terraform-infra/
 │ └── prod/
 ├── Jenkinsfile
 └── README.md
-
+```
 
 ## 🛠 Tech Stack
 
