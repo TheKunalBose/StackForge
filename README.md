@@ -19,7 +19,8 @@ This repository helps you deploy and manage a complete AWS environment using **m
 │   ├── dev
 │   └── prod
 ├── Jenkinsfile
-└── README.md'''
+└── README.md
+'''
 
 
 ## 🛠 Tech Stack
