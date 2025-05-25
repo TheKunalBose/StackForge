@@ -1,3 +1,6 @@
+![image](https://github.com/user-attachments/assets/0be81d3b-ba44-4e4c-83bf-b38a1accfd29)
+
+
 # 🚀 Terraform Infrastructure Deployment with Jenkins CI/CD
 
 Welcome to the Terraform Infrastructure-as-Code (IaC) project!  
