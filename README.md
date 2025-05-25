@@ -16,10 +16,10 @@ terraform-infra/
 │ ├── ec2/
 │ └── eks/
 ├── environments/
-│ ├── dev/ # Dev environment Terraform configs
-│ └── prod/ # Prod environment Terraform configs
-├── Jenkinsfile # CI/CD pipeline for automated deployment
-└── README.md # This file 
+│ ├── dev/ 
+│ └── prod/ 
+├── Jenkinsfile 
+└── README.md 
 ---
 
 ## 🛠 Tech Stack
