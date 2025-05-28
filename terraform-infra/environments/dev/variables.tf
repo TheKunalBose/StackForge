@@ -1,64 +1,118 @@
+# ---------------------------------------------------------------------------------------------------------------------
+# COMMON VARIABLES
+# ---------------------------------------------------------------------------------------------------------------------
+variable "region" {
+  description = "AWS region to deploy resources"
+  type        = string
+  default     = "us-west-2"
+}
+
+variable "project" {
+  description = "Project name used as a prefix for resources"
+  type        = string
+  default     = "stackforge"
+}
+
+variable "common_tags" {
+  description = "Common tags to be applied to all resources"
+  type        = map(string)
+  default = {
+    Environment = "development"
+    Project     = "StackForge"
+    ManagedBy   = "Terraform"
+  }
+}
+
+# ---------------------------------------------------------------------------------------------------------------------
+# VPC/NETWORKING VARIABLES
+# ---------------------------------------------------------------------------------------------------------------------
 variable "vpc_cidr" {
-  default = "10.0.0.0/16"
+  description = "The CIDR block for the VPC"
+  type        = string
 }
 
 variable "vpc_name" {
-  default = "dev-vpc"
+  description = "The name of the VPC"
+  type        = string
 }
 
 variable "public_subnet_cidrs" {
-  default = ["10.0.1.0/24", "10.0.2.0/24"]
+  description = "The CIDR blocks for the public subnets"
+  type        = list(string)
 }
 
 variable "private_subnet_cidrs" {
-  default = ["10.0.3.0/24", "10.0.4.0/24"]
+  description = "The CIDR blocks for the private subnets"
+  type        = list(string)
 }
 
 variable "azs" {
-  default = ["us-east-1a", "us-east-1b"]
+  description = "The availability zones to deploy resources in"
+  type        = list(string)
 }
 
+# ---------------------------------------------------------------------------------------------------------------------
+# EKS VARIABLES
+# ---------------------------------------------------------------------------------------------------------------------
 variable "cluster_name" {
-  default = "dev-eks-cluster"
+  description = "The name of the EKS cluster"
+  type        = string
 }
 
 variable "cluster_version" {
-  default = "1.28"
+  description = "The Kubernetes version to use for the EKS cluster"
+  type        = string
+}
+
+variable "cluster_role_arn" {
+  description = "The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations"
+  type        = string
 }
 
 variable "node_role_arn" {
-  description = "IAM role ARN for the EKS node group"
-  default     = "arn:aws:iam::123456789012:role/EKSNodeRole"
+  description = "The Amazon Resource Name (ARN) of the IAM role that provides permissions for the EKS Node Group"
+  type        = string
 }
 
 variable "desired_size" {
-  default = 2
+  description = "The desired number of worker nodes"
+  type        = number
 }
 
 variable "max_size" {
-  default = 4
+  description = "The maximum number of worker nodes"
+  type        = number
 }
 
 variable "min_size" {
-  default = 1
+  description = "The minimum number of worker nodes"
+  type        = number
 }
 
 variable "instance_types" {
-  default = ["t3.medium", "t3a.medium"]
+  description = "The instance types to use for the worker nodes"
+  type        = list(string)
 }
 
+# ---------------------------------------------------------------------------------------------------------------------
+# JENKINS VARIABLES
+# ---------------------------------------------------------------------------------------------------------------------
 variable "jenkins_ami_id" {
-  default = "ami-0c02fb55956c7d316" # Example Amazon Linux 2 AMI in us-east-1
+  description = "The ID of the AMI to use for the Jenkins instance"
+  type        = string
 }
 
 variable "jenkins_instance_type" {
-  default = "t2.medium"
+  description = "The instance type to use for the Jenkins instance"
+  type        = string
 }
 
 variable "key_name" {
-  default = "my-keypair"
+  description = "The name of the key pair to use for SSH access"
+  type        = string
 }
 
 variable "jenkins_sg_id" {
-  default = "sg-0123456789abcdef0"
+  description = "The ID of the security group to use for the Jenkins instance"
+  type        = string
 }
