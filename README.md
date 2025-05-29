@@ -8,7 +8,35 @@ This repository helps you deploy and manage a complete AWS environment using **m
 
 ## 📁 Project Structure
 ```text
-
+StackForge-Terraform-Infra/
+├── backend.tf              # Backend configuration for remote state storage
+├── main.tf                 # Primary Terraform configuration file
+├── variables.tf            # Variable declarations
+├── outputs.tf              # Output values
+├── terraform.tfvars        # Variable values specific to this environment
+├── modules/                # Reusable Terraform modules
+│   ├── vpc/                # VPC module
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   ├── eks/                # EKS cluster module
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   └── node_group/         # EKS node group module
+│       ├── main.tf
+│       ├── variables.tf
+│       └── outputs.tf
+├── environments/           # Environment-specific configurations
+│   ├── dev/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── terraform.tfvars
+│   └── prod/
+│       ├── main.tf
+│       ├── variables.tf
+│       └── terraform.tfvars
+└── README.md               # Project documentation
 ```
 
 ## 🛠 Tech Stack
