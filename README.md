@@ -1,6 +1,3 @@
-![image](https://github.com/user-attachments/assets/0be81d3b-ba44-4e4c-83bf-b38a1accfd29)
-
-
 # 🏢 StackForge-Infrastructure
 # 🚀 Terraform Infrastructure Deployment with Jenkins CI/CD
 
@@ -11,16 +8,7 @@ This repository helps you deploy and manage a complete AWS environment using **m
 
 ## 📁 Project Structure
 ```text
-terraform-infra/
-├── modules/
-│ ├── vpc/
-│ ├── ec2/
-│ └── eks/
-├── environments/
-│ ├── dev/
-│ └── prod/
-├── Jenkinsfile
-└── README.md
+
 ```
 
 ## 🛠 Tech Stack
