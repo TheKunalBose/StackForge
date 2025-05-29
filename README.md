@@ -1,5 +1,5 @@
 # 🏢 StackForge-Infrastructure
-# 🚀 Terraform Infrastructure Deployment with Jenkins CI/CD
+# 🚀 Terraform Infrastructure Deployment 
 
 Welcome to the Terraform Infrastructure-as-Code (IaC) project!  
 This repository helps you deploy and manage a complete AWS environment using **modular Terraform** and a robust **CI/CD pipeline in Jenkins**.
@@ -44,7 +44,6 @@ StackForge-Terraform-Infra/
 - 🧱 **Terraform** — Infrastructure as Code
 - 🧩 **Modular Design** — Reusable, isolated modules
 - ☁️ **AWS** — Scalable cloud infrastructure
-- ⚙️ **Jenkins** — CI/CD automation pipeline
 - 🔐 **IAM, S3, DynamoDB** — Secure backend & state locking
 
 ---
@@ -65,16 +64,6 @@ StackForge-Terraform-Infra/
 |-------------|---------------------|---------------------------|
 | 🧪 Dev       | `environments/dev`  | `dev/terraform.tfstate`  |
 | 🚀 Prod      | `environments/prod` | `prod/terraform.tfstate` |
-
----
-
-## 🤖 CI/CD Pipeline (Jenkins)
-
-- Auto checkout from GitHub
-- Initialize and validate Terraform
-- Generate plan
-- Optional approval-based apply
-- Integrated with AWS IAM credentials via Jenkins
 
 ---
 
