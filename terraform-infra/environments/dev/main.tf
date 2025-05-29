@@ -119,7 +119,7 @@ module "eks" {
 module "node_group" {
   source        = "../../modules/node_group"
   cluster_name  = module.eks.eks_cluster_name
-  node_role_arn = var.node_role_arn
+  node_role_arn = aws_iam_role.eks_node_role.arn
   private_subnet_ids = [
     module.subnet_1.private_subnet_id,
     module.subnet_2.private_subnet_id
@@ -133,7 +133,10 @@ module "node_group" {
     module.eks,
     module.vpc,
     module.subnet_1,
-    module.subnet_2
+    module.subnet_2,
+    aws_iam_role_policy_attachment.eks_worker_node_policy,
+    aws_iam_role_policy_attachment.eks_cni_policy,
+    aws_iam_role_policy_attachment.ecr_readonly_policy
   ]
 }
 

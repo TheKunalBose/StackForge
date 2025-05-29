@@ -1,19 +1,8 @@
-variable "cluster_name" {
-  description = "Name of the EKS cluster"
-  type        = string
+variable "project" {}
+variable "cluster_role_arn" {}
+variable "subnet_ids" {
+  type = list(string)
 }
-
-variable "cluster_version" {
-  description = "Kubernetes version for the EKS cluster"
-  type        = string
-}
-
-variable "vpc_id" {
-  description = "ID of the VPC"
-  type        = string
-}
-
-variable "private_subnet_ids" {
-  description = "List of private subnet IDs"
-  type        = list(string)
+variable "common_tags" {
+  type = map(string)
 }

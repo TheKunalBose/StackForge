@@ -8,7 +8,7 @@ cluster_name    = "dev-eks-cluster"
 cluster_version = "1.28"
 cluster_role_arn = "arn:aws:iam::782815632884:role/EKSClusterRole"
 
-node_role_arn  = "arn:aws:iam::782815632884:role/EKSNodeRole"
+node_role_arn  = "arn:aws:iam::782815632884:role/EKSNodeRole" # Will be created by iam.tf
 desired_size   = 2
 max_size       = 4
 min_size       = 1

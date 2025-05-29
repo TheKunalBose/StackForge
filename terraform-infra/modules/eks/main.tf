@@ -1,11 +1,10 @@
-module "eks" {
-  source          = "terraform-aws-modules/eks/aws"
-  cluster_name    = var.cluster_name
-  cluster_version = var.cluster_version
-  subnets         = var.private_subnet_ids
-  vpc_id          = var.vpc_id
+resource "aws_eks_cluster" "eks" {
+  name     = "${var.project}-eks"
+  role_arn = var.cluster_role_arn
 
-  manage_aws_auth = true
+  vpc_config {
+    subnet_ids = var.subnet_ids
+  }
 
-  # Additional configurations as needed
+  tags = var.common_tags
 }
