@@ -1,8 +1,5 @@
-![image](https://github.com/user-attachments/assets/0be81d3b-ba44-4e4c-83bf-b38a1accfd29)
-
-
 # 🏢 StackForge-Infrastructure
-# 🚀 Terraform Infrastructure Deployment with Jenkins CI/CD
+# 🚀 Terraform Infrastructure Deployment 
 
 Welcome to the Terraform Infrastructure-as-Code (IaC) project!  
 This repository helps you deploy and manage a complete AWS environment using **modular Terraform** and a robust **CI/CD pipeline in Jenkins**.
@@ -11,16 +8,35 @@ This repository helps you deploy and manage a complete AWS environment using **m
 
 ## 📁 Project Structure
 ```text
-terraform-infra/
-├── modules/
-│ ├── vpc/
-│ ├── ec2/
-│ └── eks/
-├── environments/
-│ ├── dev/
-│ └── prod/
-├── Jenkinsfile
-└── README.md
+StackForge-Terraform-Infra/
+├── backend.tf              # Backend configuration for remote state storage
+├── main.tf                 # Primary Terraform configuration file
+├── variables.tf            # Variable declarations
+├── outputs.tf              # Output values
+├── terraform.tfvars        # Variable values specific to this environment
+├── modules/                # Reusable Terraform modules
+│   ├── vpc/                # VPC module
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   ├── eks/                # EKS cluster module
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   └── node_group/         # EKS node group module
+│       ├── main.tf
+│       ├── variables.tf
+│       └── outputs.tf
+├── environments/           # Environment-specific configurations
+│   ├── dev/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── terraform.tfvars
+│   └── prod/
+│       ├── main.tf
+│       ├── variables.tf
+│       └── terraform.tfvars
+└── README.md               # Project documentation
 ```
 
 ## 🛠 Tech Stack
@@ -28,7 +44,6 @@ terraform-infra/
 - 🧱 **Terraform** — Infrastructure as Code
 - 🧩 **Modular Design** — Reusable, isolated modules
 - ☁️ **AWS** — Scalable cloud infrastructure
-- ⚙️ **Jenkins** — CI/CD automation pipeline
 - 🔐 **IAM, S3, DynamoDB** — Secure backend & state locking
 
 ---
@@ -49,16 +64,6 @@ terraform-infra/
 |-------------|---------------------|---------------------------|
 | 🧪 Dev       | `environments/dev`  | `dev/terraform.tfstate`  |
 | 🚀 Prod      | `environments/prod` | `prod/terraform.tfstate` |
-
----
-
-## 🤖 CI/CD Pipeline (Jenkins)
-
-- Auto checkout from GitHub
-- Initialize and validate Terraform
-- Generate plan
-- Optional approval-based apply
-- Integrated with AWS IAM credentials via Jenkins
 
 ---
 
